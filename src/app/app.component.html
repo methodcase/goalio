@@ -6,69 +6,36 @@
     </button>
   </div>
 </div>
-<section class="jumbotron text-center">
+<section class="jumbotron">
   <div class="container">
     <h1 class="jumbotron-heading" class="hidden-xs-down"> <app-icon></app-icon> {{title}}</h1>
     <p class="lead text-muted hidden-xs-down">Responsive Unopnionated Personal Finance Advisor</p>    
     <div class="container">
       <div class="row"> 
-        <div class="col col-lg-4 col-sm-6 col-xs-6 col-12 ">My car is a 
-          <select name="" id="" class="form-control" #selection (change)="selectYear(selection.value)">
-            <option></option>
-            <option *ngFor="let year of [1,2,3,4,5,6]"> 201{{year}}</option>
-          </select>
-        </div>
-        <div class="col col-lg-4 col-sm-6 col-12">Make
-           <app-makes [makesData]="makes" [handleChange]="selectMake"></app-makes>
-        </div>
-        <div class="col col-lg-4 col-xs-12 col-12">Model
-          <app-models [modelsData]="models" [selectModel]="selectModel"></app-models>
+        <div class="col col-12 col-lg-6">
+          <label>My monthly net income</label>
+          <input type="text" class="form-control btn-lg">
+          <hr/> 
+          <label for="">My Essential Cost</label> 
+          <div class="row">
+              <input type="text" class="form-control col col-lg-6"  placeholder="e.g. Rent"/>
+              <input type="text" class="form-control col col-lg-6" value="0"/>
+          </div>
+          <div class="row">
+              <input type="text" class="form-control col col-lg-6"  placeholder="e.g. Rent"/>
+              <input type="text" class="form-control col col-lg-6" value="0"/>
+          </div>
+        </div>        
+        <div class="col col-12 col-lg-6">
+          <span class="text-muted">My remaining:</span>
+          <h2>8,500 PHP</h2>
+          <button class="btn btn-primary btn-lg"> Proceed </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12"><p class="lead text-muted">Insured for:</p></div>
-        <div class="col-12"><h2>PHP  {{computedValue.toLocaleString('ph-PH',{currency:'PHP'})}}</h2></div>
-      </div>
-      <div class="row">
-        <div class="col-12"><button (click)=compute class="btn btn-primary btn-lg">Get a quote</button></div>
-      </div>
+      
     </div>
   </div>
 </section>
 <div class="container">
-  <div class="card-deck">
-  <div class="card">
-    <div class="card-block card-warning card-inverse">
-      <h4 class="card-title">Policy 1</h4>
-    </div>
-    <div class="card-block">
-      <h4 class="card-title">Policy 1</h4>
-      <p class="card-text">Covergae Details.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-    <div class="card-block card-footer"><button class="btn btn-primary"> Choose this quote</button></div>
-  </div>
-  <div class="card">
-    <div class="card-block card-warning card-inverse">
-      <h4 class="card-title">Policy 1</h4>
-    </div>
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-    <div class="card-block card-footer"><button class="btn btn-primary"> Choose this quote</button></div>
-  </div>
-  <div class="card">
-    <div class="card-block card-warning card-inverse">
-      <h4 class="card-title">Policy 1</h4>
-    </div>
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-    <div class="card-block card-footer"><button class="btn btn-primary"> Choose this quote</button></div>
-  </div>
-</div>
+  
 </div>
