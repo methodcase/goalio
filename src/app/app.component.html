@@ -17,11 +17,7 @@
           <input type="text" class="form-control btn-lg">
           <hr/> 
           <label for="">My Essential Cost</label> 
-          <div class="row">
-              <input type="text" class="form-control col col-lg-6"  placeholder="e.g. Rent"/>
-              <input type="text" class="form-control col col-lg-6" value="0"/>
-          </div>
-          <div class="row">
+          <div *ngFor="let model of costEssentials" class="row">
               <input type="text" class="form-control col col-lg-6"  placeholder="e.g. Rent"/>
               <input type="text" class="form-control col col-lg-6" value="0"/>
           </div>

@@ -16,6 +16,7 @@ export class AppComponent {
 
   models = []
   makes = []  
+  costEssentials = [{title:'rent', value:0},{title:'utilities', value:0}]
   title = 'RUPHA.io'
   year: number = 0
   value: number = 0
