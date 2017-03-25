@@ -30,6 +30,7 @@ export class AppComponent {
   value: number = 0
   computedValue: number = 0
   btnState: 'disabled'
+  showProceed: boolean = false
 
   compute(...args) {
     this.data.getCompute(this.year, this.value).subscribe(
@@ -70,10 +71,11 @@ export class AppComponent {
   computeRemaining = (title: string, value: number) => {
     const totalCostEssentials = this.costEssentials.map(x => x.value).reduce((a, c) => Number(a) + Number(c))
     this.remainingAmount = this.netAmount - totalCostEssentials
+    this.showProceed = true
   }
 
   proceed() {
-
+    
   }
 
   selectYear(year) {
