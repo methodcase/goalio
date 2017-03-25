@@ -1,7 +1,11 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
+<<<<<<< HEAD
 /dist
+=======
+#/dist
+>>>>>>> 173a5c4b40fc3952c8027716777be2f41217ab5a
 /tmp
 
 # dependencies
@@ -14,7 +18,10 @@
 .c9/
 *.launch
 .settings/
+<<<<<<< HEAD
 *.sublime-workspace
+=======
+>>>>>>> 173a5c4b40fc3952c8027716777be2f41217ab5a
 
 # IDE - VSCode
 .vscode/*

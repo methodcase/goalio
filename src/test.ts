@@ -1,5 +1,10 @@
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
+<<<<<<< HEAD
+=======
+import './polyfills.ts';
+
+>>>>>>> 173a5c4b40fc3952c8027716777be2f41217ab5a
 import 'zone.js/dist/long-stack-trace-zone';
 import 'zone.js/dist/proxy.js';
 import 'zone.js/dist/sync-test';
