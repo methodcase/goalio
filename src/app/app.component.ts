@@ -9,27 +9,27 @@ import 'rxjs/add/operator/map';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[DataService]
+  providers: [DataService]
 })
 export class AppComponent {
   constructor(private data: DataService) { }
 
   models = []
-  makes = []  
+  makes = []
   totalCostEssentials = 0
   remainingAmount = 0
   netAmount = 0
   costEssentials = [
-    {title:'rent', value:0},
-    {title:'utilities', value:0},
-    {title:'food', value:0},
-    {title:'transportation', value:0}
-    ]
+    { title: 'rent', value: 0 },
+    { title: 'utilities', value: 0 },
+    { title: 'food', value: 0 },
+    { title: 'transportation', value: 0 }
+  ]
   title = 'RUPHA.io'
   year: number = 0
   value: number = 0
   computedValue: number = 0
-  btnState:'disabled'
+  btnState: 'disabled'
 
   compute(...args) {
     this.data.getCompute(this.year, this.value).subscribe(
@@ -53,7 +53,7 @@ export class AppComponent {
         this.computedValue = items.value
       }
     )
-    
+
   }
 
   setNetAmount = (value) => {
@@ -62,19 +62,27 @@ export class AppComponent {
 
   updateComputation = (title: string, value: number) => {
     this.costEssentials = this.costEssentials.map(x => {
-      return (x.title === title) ? Object.assign({}, x, {value}) : x
+      return (x.title === title) ? Object.assign({}, x, { value }) : x
     })
-    const totalCostEssentials = this.costEssentials.map(x => x.value).reduce((a,c) => Number(a) + Number(c))
+    console.log(this.costEssentials)
+  }
+
+  computeRemaining = (title: string, value: number) => {
+    const totalCostEssentials = this.costEssentials.map(x => x.value).reduce((a, c) => Number(a) + Number(c))
     this.remainingAmount = this.netAmount - totalCostEssentials
+  }
+
+  proceed() {
+
   }
 
   selectYear(year) {
     this.year = year
-    this.data.getMakes().subscribe( items => this.makes = items )
+    this.data.getMakes().subscribe(items => this.makes = items)
   }
 
   ngOnInit() {
-    this.data.getModels().subscribe( items => this.models = items )
+    this.data.getModels().subscribe(items => this.models = items)
   }
 
 }
