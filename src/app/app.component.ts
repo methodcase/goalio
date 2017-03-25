@@ -16,7 +16,15 @@ export class AppComponent {
 
   models = []
   makes = []  
-  costEssentials = [{title:'rent', value:0},{title:'utilities', value:0}]
+  totalCostEssentials = 0
+  remainingAmount = 0
+  netAmount = 0
+  costEssentials = [
+    {title:'rent', value:0},
+    {title:'utilities', value:0},
+    {title:'food', value:0},
+    {title:'transportation', value:0}
+    ]
   title = 'RUPHA.io'
   year: number = 0
   value: number = 0
@@ -46,6 +54,18 @@ export class AppComponent {
       }
     )
     
+  }
+
+  setNetAmount = (value) => {
+    this.netAmount = value
+  }
+
+  updateComputation = (title: string, value: number) => {
+    this.costEssentials = this.costEssentials.map(x => {
+      return (x.title === title) ? Object.assign({}, x, {value}) : x
+    })
+    const totalCostEssentials = this.costEssentials.map(x => x.value).reduce((a,c) => Number(a) + Number(c))
+    this.remainingAmount = this.netAmount - totalCostEssentials
   }
 
   selectYear(year) {

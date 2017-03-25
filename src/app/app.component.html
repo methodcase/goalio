@@ -14,17 +14,17 @@
       <div class="row"> 
         <div class="col col-12 col-lg-6">
           <label>My monthly net income</label>
-          <input type="text" class="form-control btn-lg">
+          <input type="number" class="form-control btn-lg" #selection (keyup)="setNetAmount(selection.value)" />
           <hr/> 
           <label for="">My Essential Cost</label> 
-          <div *ngFor="let model of costEssentials" class="row">
-              <input type="text" class="form-control col col-lg-6"  placeholder="e.g. Rent"/>
-              <input type="text" class="form-control col col-lg-6" value="0"/>
+          <div *ngFor="let item of costEssentials" class="row">
+              <label for="" class="col col-lg-4">{{item.title}}</label>
+              <input type="number" class="form-control col col-lg-4" #selection (keyup)="updateComputation(item.title,selection.value)" [value]="item.value"/>
           </div>
         </div>        
         <div class="col col-12 col-lg-6">
           <span class="text-muted">My remaining:</span>
-          <h2>8,500 PHP</h2>
+          <h2>{{remainingAmount}}</h2>
           <button class="btn btn-primary btn-lg"> Proceed </button>
         </div>
       </div>
