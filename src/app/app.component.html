@@ -21,12 +21,12 @@
               <label for="" class="col col-lg-4">{{item.title}}</label>
               <input type="number" class="form-control col col-lg-6" #selection (change)="updateComputation(item.title,selection.value)" [value]="item.value"/>
           </div>
-          <button class="btn btn-primary btn-lg" (click)="computeRemaining()"> Compute </button>
+          <button class="btn btn-primary btn-lg" (click)="computeRemaining()" [disabled]="(netAmount === 0) ? true : false"> Compute </button>
         </div>        
         <div class="col col-12 col-lg-6">
           <span class="text-muted">My remaining:</span>
           <h2>{{remainingAmount}}</h2>
-          <button class="btn btn-success btn-lg" *ngIf="showProceed"> Proceed </button>
+          <button class="btn btn-success btn-lg" *ngIf="showProceed"> Next </button>
         </div>
       </div>
       
