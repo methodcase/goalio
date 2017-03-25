@@ -18,8 +18,8 @@
           <hr/> 
           <label for="">My Essential Cost</label> 
           <div *ngFor="let item of costEssentials" class="row">
-              <label for="" class="col col-lg-1">{{item.title}}</label>
-              <input type="number" class="form-control col col-lg-4" #selection (change)="updateComputation(item.title,selection.value)" [value]="item.value"/>
+              <label for="" class="col col-lg-4">{{item.title}}</label>
+              <input type="number" class="form-control col col-lg-6" #selection (change)="updateComputation(item.title,selection.value)" [value]="item.value"/>
           </div>
           <button class="btn btn-primary btn-lg" (click)="computeRemaining()" [disabled]="(netAmount === 0) ? true : false"> Compute </button>
         </div>        
